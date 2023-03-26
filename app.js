@@ -1,11 +1,10 @@
 const { Telegraf, Scenes, session } = require('telegraf')
-const TOKEN = '6230036462:AAFdr9Wbex8-JbzGIdTeTkqySEnnhv1Ob2U'
-const bot = new Telegraf(TOKEN)
+require('dotenv').config()
+const bot = new Telegraf(process.env.TOKEN)
 const axios = require('axios')
 const fs = require('fs')
 const { spawn } = require('child_process')
 
-Scenes
 const { VoiceGPT } = require('./gpt-scene')
 const gpt = new VoiceGPT()
 const stt = gpt.STTScene()
